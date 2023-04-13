@@ -23,4 +23,5 @@ jobs:
 workflows:
   swag-labs-cucumber-selenium-workflow:
     jobs:
+      - build
       - swag-labs-cucumber-selenium
