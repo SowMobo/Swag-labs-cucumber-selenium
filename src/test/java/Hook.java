@@ -21,9 +21,9 @@ public class Hook {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-//        options.addArguments("incognito");
-//        driver = new ChromeDriver(options);
-        driver = new RemoteWebDriver(new URL("http://172.16.14.40:4444/wd/hub"), options);
+        options.addArguments("incognito");
+        driver = new ChromeDriver(options);
+//        driver = new RemoteWebDriver(new URL("http://172.16.14.40:4444/wd/hub"), options);
     }
 
     @After
