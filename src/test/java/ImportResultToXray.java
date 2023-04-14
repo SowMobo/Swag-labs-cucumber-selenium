@@ -10,10 +10,7 @@ import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
 
 import javax.net.ssl.SSLContext;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
@@ -89,8 +86,8 @@ public class ImportResultToXray {
         //Get OutputStream from HttpURLConnection and write json string
         Thread.sleep(10000);
         PrintStream ps = new PrintStream(conn.getOutputStream());
-//        Path filePath = Path.of(System.getProperty("user.dir") + "\\target\\cucumber.json");
-        Path filePath = Paths.get("/Users/modibosow/Software-Construction-Java/SeleniumProjects/Swag-labs-cucumber-selenium/target/cucumber.json");
+        Path filePath = Path.of(System.getProperty("user.dir")+ File.separator+"target"+File.separator +"cucumber.json");
+//        Path filePath = Paths.get("        /Users/modibosow/Software-Construction-Java/SeleniumProjects/Swag-labs-cucumber-selenium/target/cucumber.json");
         String content = Files.readString(filePath);
         System.out.println("mon fichier  = " + content);
 
