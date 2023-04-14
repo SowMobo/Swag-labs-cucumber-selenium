@@ -11,7 +11,11 @@ import java.security.NoSuchAlgorithmException;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = {"@OrderProduct"},
+        /**
+         *  tags = {"@OrderProduct", "@fail-login-test", "@Login"},
+         *  run a test that is tagged by @OrderProduct and @fail-login-test and @Login
+        */
+        tags = {"@OrderProduct, @fail-login-test, @Login"},
         features = "src/test/resources/features",
 //        glue = "StepDefinitions",
 //        plugin = {
