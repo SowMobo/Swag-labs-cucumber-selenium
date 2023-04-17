@@ -5,10 +5,18 @@ pipeline {
     }
 
     stages {
+
+        stage('checkout the project from github') {
+            steps {
+                 sh "git clone https://github.com/SowMobo/Swag-labs-cucumber-selenium.git"
+            }
+        }
+
         stage('exporting BDD tests cases from Jira/Xray') {
             steps {
-                sh "curl -H "Content-Type: application/json" -X GET -H "Authorization: Bearer ${JIRA_XRAY_TOKEN}" "https://xray.cloud.getxray.app/api/v1/export/cucumber?keys=POEI23-388;POEI23-378;POEI23-377&fz=true" --output features.zip"
-                sh "unzip features.zip -d src/test/resources/features"
+                sh "curl -H 'Content-Type: application/json' -X GET -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' 'https://xray.cloud.getxray.app/api/v1/export/cucumber?keys=POEI23-388;POEI23-378;POEI23-377&fz=true' --output features.zip"
+                // sh "unzip features.zip -d src/test/resources/features"
+                unzip  dir: 'src/test/rersources/features', glob: ' ', zipFile: 'features.zip'
                 sh "rm features.zip"
             }
         }
@@ -17,9 +25,10 @@ pipeline {
                  sh "mvn clean test"
             }
         }
+
         stage('Importing tests execution to Jira/Xray') {
             steps {
-                    sh "curl -H "Content-Type: application/json" -X POST -H "Authorization: Bearer ${JIRA_XRAY_TOKEN"  --data @"target/cucumber.json" https://xray.cloud.getxray.app/api/v1/import/execution/cucumber"
+                sh "curl -H 'Content-Type: application/json' -X POST -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}'  --data @'target/cucumber.json' https://xray.cloud.getxray.app/api/v1/import/execution/cucumber"
             }
         }
     }
