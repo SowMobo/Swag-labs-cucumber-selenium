@@ -29,9 +29,9 @@ import java.security.NoSuchAlgorithmException;
         plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber.json" }
 )
 public class RunnerMyTest {
-    @AfterClass
-    public static void importTestExecutionToJIRAXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
-        ImportResultToXray apiConnector = new ImportResultToXray();
-        apiConnector.ImportToXray();
-    }
+//    @AfterClass
+//    public static void importTestExecutionToJIRAXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
+//        ImportResultToXray apiConnector = new ImportResultToXray();
+//        apiConnector.ImportToXray();
+//    }
 }
