@@ -6,11 +6,11 @@ pipeline {
 
     stages {
 
-        stage('checkout the project from github') {
-            steps {
-                 sh "git clone https://github.com/SowMobo/Swag-labs-cucumber-selenium.git"
-            }
-        }
+//         stage('checkout the project from github') {
+//             steps {
+//                  sh "git clone https://github.com/SowMobo/Swag-labs-cucumber-selenium.git"
+//             }
+//         }
 
         stage('exporting BDD tests cases from Jira/Xray') {
             steps {
