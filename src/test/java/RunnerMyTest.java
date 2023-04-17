@@ -14,8 +14,9 @@ import java.security.NoSuchAlgorithmException;
         /**
          *  tags = {"@OrderProduct", "@fail-login-test", "@Login"},
          *  run a test that is tagged by @OrderProduct and @fail-login-test and @Login
+         *  tags = {"@OrderProduct, @fail-login-test, @Login"},
         */
-        tags = {"@OrderProduct, @fail-login-test, @Login"},
+        tags = {"@mobo_cucumber"},
         features = "src/test/resources/features",
 //        glue = "StepDefinitions",
 //        plugin = {
