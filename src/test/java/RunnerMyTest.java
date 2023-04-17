@@ -14,8 +14,9 @@ import java.security.NoSuchAlgorithmException;
         /**
          *  tags = {"@OrderProduct", "@fail-login-test", "@Login"},
          *  run a test that is tagged by @OrderProduct and @fail-login-test and @Login
+         *  tags = {"@OrderProduct, @fail-login-test, @Login"},
         */
-        tags = {"@OrderProduct, @fail-login-test, @Login"},
+        tags = {"@mobo_cucumber"},
         features = "src/test/resources/features",
 //        glue = "StepDefinitions",
 //        plugin = {
@@ -28,9 +29,9 @@ import java.security.NoSuchAlgorithmException;
         plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber.json" }
 )
 public class RunnerMyTest {
-    @AfterClass
-    public static void importTestExecutionToJIRAXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
-        ImportResultToXray apiConnector = new ImportResultToXray();
-        apiConnector.ImportToXray();
-    }
+//    @AfterClass
+//    public static void importTestExecutionToJIRAXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
+//        ImportResultToXray apiConnector = new ImportResultToXray();
+//        apiConnector.ImportToXray();
+//    }
 }
