@@ -47,7 +47,7 @@ public class LoginStepdefs {
 
     @Then("La page de accueil est affichee avec le titre {string}")
     public void laPageDeAccueilEstAfficheeAvecLeTitre(String arg0) {
-        String actualTitle = driver.findElement(By.className("app_logo"))
+        String actualTitle = driver.findElement(By.cssSelector("div.app_logo"))
                 .getText();
         Assert.assertEquals(arg0, actualTitle);
     }
