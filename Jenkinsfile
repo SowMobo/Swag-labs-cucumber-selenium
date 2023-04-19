@@ -8,7 +8,7 @@ pipeline {
         stage('exporting BDD tests cases from Jira/Xray') {
             steps {
                 sh "curl -H 'Content-Type: application/json' -X GET -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' 'https://xray.cloud.getxray.app/api/v1/export/cucumber?keys=POEI23-388;POEI23-378;POEI23-377&fz=true' --output features.zip"
-                sh "unzip features.zip -d src/test/resources/features"
+                sh "unzip -o features.zip -d src/test/resources/features"
 //                 unzip  dir: 'src/test/rersources/features', glob: ' ', zipFile: 'features.zip'
                 sh "rm features.zip"
             }

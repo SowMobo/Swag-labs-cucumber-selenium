@@ -19,7 +19,7 @@ Feature: SauceDemo select product from home page test Modibo
 		And   Product title in my cart is as "<expectedTitle>"
 		
 		Examples:
-		  |username                | password   | index |expectedTitle                     |expectedPrice |expectedTitle
-		  |standard_user           |secret_sauce| 0     |Sauce Labs Backpack               |$29.99        |Sauce Labs Backpack
-		  |standard_user             |secret_sauce| 5     |Test.allTheThings() T-Shirt (Red) |$15.99        |Test.allTheThings() T-Shirt (Red)
-		  |standard_user           |secret_sauce| 3     |Sauce Labs Fleece Jacket          |$49.99        |Sauce Labs Fleece Jacket
+		  |username                | password   | index |expectedTitle                     |expectedPrice |expectedTitle|
+		  |standard_user           |secret_sauce| 0     |Sauce Labs Backpack               |$29.99        |Sauce Labs Backpack|
+		  |standard_user             |secret_sauce| 5     |Test.allTheThings() T-Shirt (Red) |$15.99        |Test.allTheThings() T-Shirt (Red)|
+		  |standard_user           |secret_sauce| 3     |Sauce Labs Fleece Jacket          |$49.99        |Sauce Labs Fleece Jacket|
