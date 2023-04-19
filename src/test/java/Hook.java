@@ -13,6 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class Hook {
     public static WebDriver driver;
@@ -23,6 +24,7 @@ public class Hook {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("incognito");
         driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //        driver = new RemoteWebDriver(new URL("http://172.16.14.40:4444/wd/hub"), options);
     }
 

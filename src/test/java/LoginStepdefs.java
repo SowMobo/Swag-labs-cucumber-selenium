@@ -11,6 +11,8 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class LoginStepdefs {
     private WebDriver driver = Hook.driver;
     public LoginStepdefs() {
